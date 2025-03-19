@@ -108,27 +108,7 @@
     transform: scale(1.05); /* Leve aumento ao passar o mouse */
 }
 
-/* Efeito de pulsação */
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 5px rgba(39, 174, 96, 0.5);
-    }
-    100% {
-        transform: scale(1.05);
-        box-shadow: 0 0 20px rgba(39, 174, 96, 0.7);
-    }
-}
 
-
-        .signature {
-            font-family: 'Dancing Script', cursive;
-            text-align: center;
-            margin-top: 30px;
-            font-weight: bold;
-            font-size: 28px;
-            color: #555;
-        }
 
         .p {
           text-align: center;
@@ -241,93 +221,14 @@
            <br><br>
            <P class="p">Após o envio, aguarde o Contato.</P>
            <div class="button-container">
-          <button type="submit" id="submit-form" class="button enviar" disabled>ENVIAR INSCRIÇÃO</button>
+          <button type="submit" id="submit-form" class="button enviar" >ENVIAR INSCRIÇÃO</button>
           </div>
 <br>           
             
 
     </form>
 
-    <script src="https://cdn.jsdelivr.net/npm/signature_pad@3.0.0-beta.3/dist/signature_pad.min.js"></script>
-
-  <script>   
-
-    const canvas = document.getElementById("signature-pad");
-const enableSignBtn = document.getElementById("enable-sign");
-const clearBtn = document.getElementById("clear");
-const submitFormBtn = document.getElementById("submit-form");
-const fileInput = document.getElementById("signature-file");
-
-const ctx = canvas.getContext("2d");
-const signaturePad = new SignaturePad(canvas, {
-  backgroundColor: "rgba(255, 255, 255, 1)",
-  penColor: "rgb(0, 0, 0)",
-});
-
-// Desativa o canvas inicialmente
-signaturePad.off();
-
-let savedImageData = null;
-
-function addTextToCanvas() {
-  if (!savedImageData) {
-    savedImageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-  }
-
-  ctx.putImageData(savedImageData, 0, 0);
-  ctx.fillStyle = "black";
-  ctx.font = "12px Arial";
-  ctx.textAlign = "left";
-
-  const text = `Atesto que estou de acordo com o plano que escolhi. (Favor assinar abaixo)`;
-
-  const words = text.split(" ");
-  let y = 30;
-  let line = "";
-
-  words.forEach((word, index) => {
-    line += word + " ";
-    if ((index + 1) % 5 === 0 || index === words.length - 1) {
-      ctx.fillText(line, 8, y);
-      line = "";
-      y += 12;
-    }
-  });
-}
-
-enableSignBtn.addEventListener("click", function () {
-  signaturePad.on();
-  addTextToCanvas();
-  clearBtn.disabled = false;
-  enableSignBtn.disabled = true;
-});
-
-// Função de limpar assinatura
-clearBtn.addEventListener("click", function () {
-  signaturePad.clear();
-  savedImageData = null;
-  addTextToCanvas();
-});
-
-// Converte a assinatura em imagem automaticamente após a assinatura
-signaturePad.onEnd = function () {
-  if (signaturePad.isEmpty()) return;
-
-  canvas.toBlob(function (blob) {
-    if (!blob) return;
-
-    const file = new File([blob], "assinatura.png", { type: "image/png" });
-    const dataTransfer = new DataTransfer();
-    dataTransfer.items.add(file);
-    fileInput.files = dataTransfer.files;
-    submitFormBtn.disabled = false;
-  }, "image/png");
-};
-
-
-  </script>
-
-  
+      
     
 <script
       type="module"
