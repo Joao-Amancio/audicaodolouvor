@@ -143,6 +143,33 @@
   }
 }
 
+/* Estilo geral para o campo do link */
+#youtube_link {
+  width: 100%; /* O campo vai ocupar toda a largura disponível */
+  padding: 12px 15px; /* Espaço dentro do campo */
+  font-size: 16px; /* Tamanho da fonte */
+  border: 2px solid #d35400; /* Cor da borda (laranja) */
+  border-radius: 8px; /* Bordas arredondadas */
+  background-color: #fff; /* Fundo branco */
+  color: #333; /* Cor do texto */
+  box-sizing: border-box; /* Para incluir padding na largura total */
+  transition: all 0.3s ease; /* Transição suave para mudanças */
+}
+
+/* Efeito de foco quando o usuário clicar no campo */
+#youtube_link:focus {
+  border-color: #27ae60; /* Muda a cor da borda para verde */
+  box-shadow: 0 0 8px rgba(39, 174, 96, 0.7); /* Adiciona uma sombra suave */
+  outline: none; /* Remove o contorno padrão */
+}
+
+/* Estilo para o texto de placeholder */
+#youtube_link::placeholder {
+  color: #999; /* Cor do texto do placeholder */
+  font-style: italic; /* Torna o texto do placeholder em itálico */
+}
+
+
 
 
     </style>
@@ -207,10 +234,9 @@
             </div> <br>          
       
        
-            <label class="video" for="video__input" tabIndex="0">
-                <span class="video__text">Clique aqui para anexar um vídeo (máx. 3 minutos)</span>
-              </label>
-              <input type="file" name="video__input" id="video__input" accept="video/*" required>
+            <label for="youtube_link">Link do vídeo no YouTube (copie e cole o link aqui):</label>
+            <input type="url" name="youtube_link" id="youtube_link" placeholder="https://www.youtube.com/..." required>
+            
               
        
       <br />  
@@ -240,35 +266,7 @@
     ></script>
   
 
-  <script>
-   const inputFile = document.querySelector("#video__input");
-const videoText = document.querySelector(".video__text");
-const videoTextMsg = "Clique aqui para anexar um vídeo (máx. 3 minutos)";
-videoText.innerHTML = videoTextMsg;
-
-inputFile.addEventListener("change", function (e) {
-  const inputTarget = e.target;
-  const file = inputTarget.files[0];
-
-  if (file) {
-    // Verifica o tipo de arquivo e se o tamanho do vídeo é adequado (máximo de 3 minutos)
-    if (file.type.startsWith("video/") && file.size <= 3 * 60 * 1024 * 1024) {
-      const videoElement = document.createElement("video");
-      videoElement.src = URL.createObjectURL(file);
-      videoElement.controls = true; // Adiciona controles de reprodução
-      videoElement.classList.add("video__file");
-
-      videoText.innerHTML = ""; // Limpa o texto inicial
-      videoText.appendChild(videoElement); // Adiciona o vídeo ao DOM
-    } else {
-      videoText.innerHTML = "Por favor, envie um vídeo de até 3 minutos.";
-    }
-  } else {
-    videoText.innerHTML = videoTextMsg; // Retorna ao texto inicial caso não haja arquivo
-  }
-});
-
-  </script>
+  
     
 </body>
 </html>
