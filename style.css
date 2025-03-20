@@ -28,11 +28,11 @@ form {
 }
 
 form .input-group {
-  color: #d35400;
+  color: rgb(49, 71, 122);;
 }
 
 form .input-group label {
-  color: #d35400;
+  color: rgb(49, 71, 122);;
   font-weight: bold;
   display: block;
   margin-bottom: 5px;
@@ -53,7 +53,7 @@ form .input-group input[type="text"] {
 
 form .input-group input:hover,
 input:focus {
-  border-color: rgb(182, 97, 32);
+  border-color: rgb(49, 71, 122);;
 }
 
 
@@ -150,7 +150,7 @@ input:focus {
 #name:hover,
 #name:focus {
   outline: none;
-  border-color: rgb(182, 97, 32);
+  border-color: rgb(49, 71, 122);
 }
 
 
@@ -315,7 +315,7 @@ button:hover {
     height: 400px;     
     
     background-color: rgb(224, 211, 211);
-    border: 5px solid rgb(182, 97, 32);
+    border: 5px solid rgb(49, 71, 122);;
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;

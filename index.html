@@ -40,7 +40,7 @@
             width: 90%;
             max-width: 800px;
             margin: auto;
-            background: #3f3f3f33;
+            background: #3a3d6833;
             padding: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
@@ -51,20 +51,26 @@
            display: block;
            margin: auto;
            max-width: 100%; /* Para garantir responsividade */
-           height: auto;  
-           border: 2px solid #d35400; 
+           height: auto;             
            border-radius: 15px;
            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3); /* Sombra suave */
        }
 
 
         h1 {
-            color: #d35400;
+            color: rgb(49, 71, 122);;
             text-align: center;
             font-size: 25px;    
         }
+
+        h2 {
+          color: rgb(49, 71, 122);
+          text-align: center;
+        }
         p {
             text-align: justify;
+            color: rgb(49, 71, 122);
+           
         }
         ul {
             list-style: none;
@@ -148,7 +154,7 @@
   width: 100%; /* O campo vai ocupar toda a largura disponível */
   padding: 12px 15px; /* Espaço dentro do campo */
   font-size: 16px; /* Tamanho da fonte */
-  border: 2px solid #d35400; /* Cor da borda (laranja) */
+  border: 2px solid rgb(49, 71, 122); /* Cor da borda (laranja) */
   border-radius: 8px; /* Bordas arredondadas */
   background-color: #fff; /* Fundo branco */
   color: #333; /* Cor do texto */
@@ -169,6 +175,25 @@
   font-style: italic; /* Torna o texto do placeholder em itálico */
 }
 
+/* Estilo básico para o container do vídeo */
+.video-container {
+  position: relative;
+  width: 100%; 
+  max-width: 100%; 
+  overflow: hidden; 
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0; 
+  margin: 0 auto; 
+}
+
+/* Estilo para o iframe (vídeo) dentro do container */
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%; 
+}
 
 
 
@@ -178,74 +203,117 @@
 </head>
 <body>
     <div class="container">
-         <h1>Ficha de Inscrição para o Curso de Violão ou Teclado</h1><br>
-         
+                 
         <img src="./assets/capa.jpg" alt="">
 
+        <div class="video-wrapper">                    
+         
+          <!-- Video 1 -->
+          <h1> Apresentação </h1>
+          <div class="video-container fade-in" id="video1">
+              <!-- O iframe será carregado via JavaScript -->
+          </div>
+          <div class="descricao fade-in" data-title="Aula 1">
+              <h2>Boas Vindas!</h2>
+              <p >Seja muito Bem-vindo(a) Asissta ao Video Acima antes de Preencher a Inscrição! 🚀✨ </details>
+              </p>
+          
+          </div>
+       
+
         <form action="https://formsubmit.co/amanciojr.144@gmail.com" id="form" method="post"  enctype="multipart/form-data" target="_blank">
-            <input type="text" name="Ficha de Inscrição para o Curso de Violão" hidden>
+            <input type="text" name="AUDIÇÃO DO MINISTÉRIO DE LOUVOR" hidden>
             <div class="input-group">            
-              <label for="name">Nome Completo do Aluno:</label>
-              <input type="text" id="name" name="Nome Completo do Aluno"
-              placeholder="Digite o nome completo do Aluno" required>
+              <label for="name">Nome e Sobrenome:</label>
+              <input type="text" id="name" name="Nome e Sobrenome"
+              placeholder="Digite o Nome e Sobrenome" required>
               <br><br>
               <div class="input-group">
-                <label for="whatsapp">whatsapp </label>
+                <label for="whatsapp">Whatsapp: </label>
                 <input
                   type="text"
-                  id="whatsapp" name="whatsapp"
+                  id="whatsapp" name="Whatsapp"
                   placeholder="(DDD) 9.9999-9999" required
                   
                 />
                 </div>         
                <br>
-               <h1>Conheça os Planos!</h1><br>
-               <p><strong>Valor do investimento (Plano 1):</strong> <br> <details><summary>Clique aqui:</summary> R$ 380,00 (parcela única). No Pix. <br> R$ 400,00 no Cartão de Crédito em até 3 vezes.
-                   <br>
-                  <br> O aluno terá 6 meses de Suporte para dúvidas de segunda a sexta, das 08h às 16h, sem  nenhum acréscimo. Além disso, novas aulas serão adicionadas semanalmente!
-                   O curso é Vitalício!
-               </p> </details><br>
-               <p><strong>Valor do investimento (Plano 2): <br></strong> <details><summary>Clique aqui:</summary>R$ 200,00 (parcela única). No Pix. <br> R$ 250,00 no Cartão de Crédito em até 2 vezes.
-                   <br> </p>
-               <p>O aluno NÃO terá o Suporte do Plano 1. Novas aulas serão adicionadas semanalmente!
-                   O Curso é Vítalício!
-               </p></details> <br>
-            <tbody>  
+
+               <div class="input-group">
+                <label for="email">Email: </label>
+                <input
+                  type="text"
+                  id="email" name="Email"
+                  placeholder="email@email.com" required
+                  
+                />
+                </div>         
+               <br>
+
+               <div class="input-group">
+                <label for="celula"> Célula e Líderes de Célula: </label>
+                <input
+                  type="text"
+                  id="celula" name="Célula"
+                  placeholder="Digite sua Célula e os Líderes" required
+                  
+                />
+                </div>         
+               <br>
+
+               <div class="input-group">
+                <label for="musica"> Qual música vai cantar e/ou tocar? </label>
+                <input
+                  type="text"
+                  id="musica" name="Qual música vai cantar e/ou tocar?"
+                  placeholder="Digite o nome da música que vai cantar e /ou tocar" required
+                  
+                />
+                </div>         
+               <br>
+
+               <div class="input-group">
+                <label for="ok" name="O que você vai fazer na Audição?"> O que você vai fazer na Audição? <br> <i>Obs: Pode escolher mais de uma opção.</i> </label>  
+                <input type="text" name="O que você vai fazer na Audição?" id="ok" hidden>
                              
-                            
-              <div class="input-group">                                                                                                             
-              <tr role="row" data-row-index="0">
-                <td><b style="color: #d35400;">Qual o Plano de Curso que você vai fazer?</b></td>
-              </tr>
-               <br> <td data-id="1"><input name="Qual o Plano de Curso que você vai fazer??" id="chkSelecionaInsere0" type="radio" value="Plano 1 com Suporte"/>&nbsp;Plano 1 com Suporte</td>&nbsp;&nbsp;<br>
-                  <td data-id="1"><input name="Qual o Plano de Curso que você vai fazer??" id="chkSelecionaExcluir0" type="radio" value="Plano 2 sem Suporte" required/>&nbsp;Plano 2 sem Suporte</td>
-                  <br>                
-              </tr> 
-            </div> <br>
-             
-            <div class="input-group">                                                                                                             
-              <tr role="row" data-row-index="1">
-                <td><b style="color: #d35400;">Curso que você vai fazer?</b></td>
-              </tr>
-               <br> <td data-id="2"><input name="Curso que você vai fazer??" id="chkSelecionaInsere1" type="radio" value="Violão"/>&nbsp;Violão</td>&nbsp;&nbsp;<br>
-                  <td data-id="2"><input name="Curso que você vai fazer??" id="chkSelecionaExcluir1" type="radio" value="Teclado" required/>&nbsp;Teclado</td>
-                  <br>                
-              </tr> 
-            </div> <br>          
-      
+                <input type="checkbox" id="cantar" name="Cantar" value="ok"/> 
+                <label id="label" for="cantar">Cantar</label>
+                <br>           
+                <input type="checkbox" id="teclado" name="Tocar Teclado" value="ok"/> 
+                <label id="label" for="teclado"> Tocar Teclado </label>
+                <br>
+                <input type="checkbox" id="violao" name="Tocar Violão" value="ok"/> 
+                <label id="label" for="violao">Tocar Violão</label>
+                <br>
+                <input type="checkbox" id="baixo" name="Tocar Contrabaixo" value="ok"/> 
+                <label id="label" for="baixo">Tocar Contrabaixo</label>
+                <br>
+                <input type="checkbox" id="guitarra" name="Tocar Guitarra" value="ok"/> 
+                <label id="label" for="guitarra">Tocar Guitarra</label>
+                <br>
+                <input type="checkbox" id="bateria" name="Tocar Bateria" value="ok"/> 
+                <label id="label" for="bateria">Tocar Bateria</label>
+               <br>
+                <label for="outros">Digite abaixo outro instrumento que deseja tocar que não está na lista:</label>
+                <input
+                  type="text"
+                  id="outros" name="Outros" placeholder="Digite outro Instrumento que não está na lista."
+                  />
+                  <br><br>              
+                
        
-            <label for="youtube_link">Link do vídeo no YouTube (copie e cole o link aqui):</label>
+            <label for="youtube_link">Link do vídeo no YouTube: <br>(copie e cole o link aqui cantando e/ou tocando)</label>
             <input type="url" name="youtube_link" id="youtube_link" placeholder="https://www.youtube.com/..." required>
             
               
        
-      <br />  
+      <br />  <br>
       
 
       <label for="date2">Data de hoje:</label>
       <input type="date" id="date2" name="date" required />
            <br><br>
-           <P class="p">Após o envio, aguarde o Contato.</P>
+           <P class="p">Após o envio, aguarde o Resultado por Email</P>
            <div class="button-container">
           <button type="submit" id="submit-form" class="button enviar" >ENVIAR INSCRIÇÃO</button>
           </div>
@@ -265,8 +333,22 @@
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
   
-
-  
+    <script>
+      // Defina o ID do vídeo
+      const videoId = 'CeGaRLRuFdo';
     
+      // Crie o iframe
+      const iframe = document.createElement('iframe');
+      iframe.width = '560';
+      iframe.height = '315';
+      iframe.src = `https://www.youtube.com/embed/${videoId}`;
+      iframe.frameBorder = '0';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+      iframe.allowFullscreen = true;
+    
+      // Encontre o elemento 'video1' e adicione o iframe nele
+      const videoContainer = document.getElementById('video1');
+      videoContainer.appendChild(iframe);
+    </script>
 </body>
 </html>
